@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303180353) do
+ActiveRecord::Schema.define(version: 20170304125912) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.string   "kurzbeschreibung"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "stats", force: :cascade do |t|
+    t.integer  "strength"
+    t.integer  "agility"
+    t.integer  "stamina"
+    t.integer  "character_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["character_id"], name: "index_stats_on_character_id"
   end
 
 end

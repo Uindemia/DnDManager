@@ -1,0 +1,17 @@
+<%= form_for([@character, @character.stats.build]) do |f| %>
+    <p>
+      <%= f.label :strength %><br>
+      <%= f.text_field :strength %>
+    </p>
+    <p>
+      <%= f.label :agility %><br>
+      <%= f.text_field :agility %>
+    </p>
+    <p>
+      <%= f.label :stamina %><br>
+      <%= f.text_field :stamina %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
